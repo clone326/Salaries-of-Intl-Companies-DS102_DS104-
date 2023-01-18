@@ -15,8 +15,7 @@
 2. [Libraries used](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#libraries-used)
 3. [Data Preprocessing](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#data-preprocessing)
       - [Cleaning Companies](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#cleaning-companies)
-      - [Cleaning Location](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#cleaning-location)
-      - [Cleaning Currencies](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#cleaning-currencies)
+      - [Cleaning Countries](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#cleaning-countries)
 4. [Best Paying Company regardless of job positions](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#best-paying-company-regardless-of-job-positions)
     - [Deeper Dive into Netflix](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#deeper-dive-into-netflix)
 5. [Best Paying Job Title regardless of Company](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#best-paying-job-title-regardless-of-company)
@@ -67,9 +66,143 @@ Data on these inflation drivers was downloaded from <a href="https://www.kaggle.
 
   ### Cleaning Companies
   
-  ### Cleaning Location
+  Issue: Many inconsistencies for data input on company names
   
-  ### Cleaning Currencies
+  Amazon example:
+  
+  Listing out Amazon Company name variations
+  ```sh
+  sort_amazon_1 = df_data_science_salaries['company'].str.contains('A', na = False)
+  sort_amazon_2 = df_data_science_salaries['company'].str.contains('a', na = False)
+  sort_amazon_3 = df_data_science_salaries['company'].str.contains('M', na = False)
+  sort_amazon_4 = df_data_science_salaries['company'].str.contains('m', na = False)
+  sort_amazon_5 = df_data_science_salaries['company'].str.contains('Z', na = False)
+  sort_amazon_6 = df_data_science_salaries['company'].str.contains('z', na = False)
+  sort_amazon_7 = df_data_science_salaries['company'].str.contains('N', na = False)
+  sort_amazon_8 = df_data_science_salaries['company'].str.contains('n', na = False)
+
+  df_data_science_salaries[(sort_amazon_1 | sort_amazon_2) & (sort_amazon_3 | sort_amazon_4) & (sort_amazon_5 | sort_amazon_6) & (sort_amazon_7 | sort_amazon_8)].company.unique()
+  ```
+  Output Amazon example:
+  
+  ![image](https://user-images.githubusercontent.com/113367891/213163335-6aff8722-fc8b-43cb-bd97-9370db5a47b5.png)
+
+  Solution: Replacing values and Double checking
+  ```sh
+  
+  df_data_science_salaries['company'].replace(to_replace=['amazon','Amazon web services','amzon','Amzon','AMAZON','Amazon Web Services','Amazon.com','AMazon'], value = 'Amazon', inplace= True)
+
+  df_data_science_salaries[(sort_amazon_1 | sort_amazon_2) & (sort_amazon_3 | sort_amazon_4) & (sort_amazon_5 | sort_amazon_6) & (sort_amazon_7 | sort_amazon_8)].company.unique()
+  ```
+  Output after cleaning:
+  
+  ![image](https://user-images.githubusercontent.com/113367891/213163573-6a47f14a-eb70-4a28-b3f1-c35c5802b65b.png)
+  
+  Other companies not affected :thumbsup:
+  
+  Continue cleaning for the companys with more than 100 entries.
+  Final Company unique count = 79
+  Company Name | Count
+  --- | --- 
+  Amazon | 8238
+  Microsoft | 5259
+  Google      |        4368
+  Facebook      |      2990
+  Apple          |     2057
+  Oracle          |    1143
+  Salesforce     |     1065
+  Intel           |     992
+  Cisco            |    958
+  IBM               |   927
+  Uber            |     893
+  Capital One      |    786
+  LinkedIn         |    750
+  VMware            |   682
+  Qualcomm           |  578
+  JPMorgan Chase      | 552
+  Bloomberg      |      547
+  Walmart         |     515
+  Goldman Sachs    |    475
+  PayPal            |   451
+  Intuit             |  449
+  Deloitte         |    434
+  Nvidia           |    405
+  Twitter          |    398
+  Adobe            |    383
+  SAP              |    368
+  eBay             |    366
+  Expedia          |   360
+  Accenture        |    355
+  Wayfair          |   339
+  Lyft             |    326
+  Netflix          |    268
+  Workday          |    264
+  Dropbox          |    254
+  Dell             |    238
+  Shopify          |    234
+  Airbnb           |    229
+  Visa             |    228
+  Atlassian        |    219
+  Snap             |    198
+  Yelp             |    196
+  Yahoo            |    189
+  ServiceNow       |    189
+  Tesla            |    179
+  Square           |    176
+  Zillow           |    175
+  Stripe           |    173
+  Yandex            |   170
+  Indeed            |   170
+  ByteDance          |  169
+  Splunk       |        161
+  EPAM       |          154
+  Comcast     |         148
+  Samsung       |       145
+  T-Mobile       |      142
+  Broadcom        |     142
+  Spotify          |    141
+  Nutanix           |   138
+  Pinterest          |  137
+  General Motors    |   134
+  Autodesk          |   132
+  American Express  |   131
+  GoDaddy            |  130
+  Morgan Stanley     |  129
+  Boeing           |    128
+  Ernst & Young   |     127
+  Booking.com     |     127
+  DoorDash         |    127
+  Lockheed Martin   |   125
+  AMD                |  122
+  Qualtrics         |   118
+  Cruise             |  117
+  Instacart           | 116
+  Twilio             |  116
+  Disney             |  115
+  Box                |  110
+  PWC                 | 110
+  Northrop Grumman   |  107
+  Citi               |  104
+  
+  ### Cleaning Countries
+  
+  Issue:
+  1. Inconsistency with data entries for 'USA'
+  2. Considering countries with more than 100 entries
+ 
+  Solution: Replace values and Filter len(x) >= 100
+  
+  ```sh
+  df_company_100['Country'].replace(to_replace=['United States'], value = 'USA', inplace= True)
+  
+  df_company_100 = df_company_100.groupby('Country').filter(lambda x : len(x) >= 100)
+
+  df_company_100.groupby(['Country'])['timestamp'].count()
+  ```
+  
+  Output:
+  
+  ![image](https://user-images.githubusercontent.com/113367891/213167286-4e80d049-f5e7-4ba0-8bb3-d4174b561859.png)
     
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
   

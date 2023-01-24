@@ -208,17 +208,82 @@ Data on these inflation drivers was downloaded from <a href="https://www.kaggle.
   
   ## Best Paying Company regardless of job positions
   
+  <ins>**Top 5 Companies that pay the Highest Average Salary (regardless of job positions)**</ins>
+
+  ![image](https://user-images.githubusercontent.com/113367891/214236570-ceac1e40-e577-4d87-b693-4a0e3f2237ad.png)
+  
+  Answer: Netflix
+  
+  <img src= "https://cdn.mos.cms.futurecdn.net/Yy247gYvzaMZXprhZHXy4E.jpg" width = "400" height = "250">
+
   ### Deeper Dive into Netflix
+  
+  I was curious about the Highest Paid Employee in the Highest Average Paying Company (i.e. Netflix)
+  
+  And I found this Employee:
+  
+  ![image](https://user-images.githubusercontent.com/113367891/214237310-4c4fdc28-0f90-41cf-a976-2acd4216df3f.png)
+  
+  **Senior Software Engineer with 19 years industry experience and 8 of the 19 years was at Netflix (California, USA) earning 1.25 million SGD annually**
+  
+  *This makes sense since he/she has had many years of experience and the opportune moment of the pandemic gave Netflix 195 million global subscriptions in 2020 and 208 million subscription up till Q3 2021*
+  
+  
+  
+  #### **Spread of Average Salary across different Job positions in Netflix**
+  
+  ![image](https://user-images.githubusercontent.com/113367891/214243615-ed042d36-743d-434a-b344-d81d0c81d7bf.png)
   
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
   
   ## Best Paying Job Title regardless of Company
   
+  <ins>**Top 10 Job Positions earn the Highest Average Salary (regardless of Company)**</ins>
+  
+  ![image](https://user-images.githubusercontent.com/113367891/214241903-90664e17-ab6d-4c3f-ba62-b001aa39ee54.png)
+
+  Answer: Software Engineering Manager
+  
   ### Deeper Dive into Software Engineering Manager
+  
+  I was curious about which Company paid the Highest for their Software Engineering Manager
+  
+  And I found that Microsoft paid the highest, but trailing behind were Netflix employees:
+  
+  ![image](https://user-images.githubusercontent.com/113367891/214243035-0e9290d1-ae9f-49c9-8a68-d8edd4a33d7d.png)
+
+  So I did a check on the Average Paying Salary for Software Engineering Managers across all Companies and found this:
+  
+  ![image](https://user-images.githubusercontent.com/113367891/214243701-01d06bca-c188-48b3-af3e-81a6d4de0be6.png)
+
+  *The data matches with the previous question about the 'Highest Paying Company', it was just an outlier that the Microsoft Employee out-earned the other Netflix Software Engineering Managers*
   
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
   
   ## Scatterplot and Linear Regression for Base Salary vs Exp years
+  
+  Before plotting the graph, I noticed 2 outliers:
+  1. An employee have over 60 years of experience
+  2. Another employee earning over 2 million per annum with 13 years experience
+  
+  Hence, I removed them and plotted the below graph:
+  
+  ![image](https://user-images.githubusercontent.com/113367891/214244873-4a26a6b5-02c1-45b6-af96-9303d265d9a9.png)
+
+  So from the above, with zero years of experience, a fresh graduate should technically be getting an average base salary of 160k per annum?!
+  And with each year of experience gained, they should be getting an increment of 5.5k per year.
+  
+  This sounded very illogical to me, especially the base salary with no experience.
+  
+  So I did a bit of digging and realised that the basesalary range for employees with zero years of experience is huge
+  
+  min = 1.4k per annum
+  
+  Max = 490k per annum
+  
+  **However, another conclusion that could be drawn from the Scatterplot is that after the 5th year mark, the salary range is extremely wide with a high boost in average salary.**
+  
+  **This could be one of those milestone career moves whereby employees jump to a better paying company and are able to demand higher salaries because of their accumulated years of experience.**
   
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
   

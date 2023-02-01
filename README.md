@@ -24,6 +24,7 @@
 5. [Location and Avg Base Salary over time](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#location-and-avg-base-salary-over-time)
 6. [Avg Salaries of companies with HQs in at least 10 countries](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#avg-salaries-of-companies-with-hqs-in-at-least-10-countries)
 7. [Conclusion & Caveats](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#conclusion-&-caveats)
+8. [Thanks for reading](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/edit/main/README.md#thank-you-for-reading-my-projects-findings-i-hope-you-have-a-great-day-ahead%EF%B8%8F)
 
 ## About The Project
 
@@ -289,12 +290,75 @@ Data on these inflation drivers was downloaded from <a href="https://www.kaggle.
   
   ## Location and Avg Base Salary over time
     
+  The locations are grouped into countries, namely:
+  1. Australia
+  2. Canada
+  3. Germany
+  4. India
+  5. Ireland
+  6. Israel
+  7. Netherlands
+  8. Russia
+  9. Singapore
+  10. Switzerland
+  11. USA
+  12. United Kingdom
+  
+  Using plotly, we could generate a line graph (average base salary) over time and each line represents a country.
+  
+  ![image](https://user-images.githubusercontent.com/113367891/216050113-e7eafd06-7c7a-445f-8db6-95cc88695a54.png)
+
+  Inside the code you can hover your cursor over each line at eah year to find out the Country and Average base salary in that country.
+    
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
   
   ## Avg Salaries of companies with HQs in at least 10 countries
   
+  We found that the countries that had HQs in at least 10 countries are:
+  1. Amazon
+  
+  ![image](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/blob/main/Amazon.png?raw=true)
+  
+  2. Google
+  
+  ![image](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/blob/main/Google.png?raw=true)
+  
+  3. IBM
+  
+  ![image](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/blob/main/IBM.png?raw=true)
+  
+  4. Microsoft
+  
+  ![image](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/blob/main/Microsoft.png?raw=true)
+  
+  5. SAP
+  
+  ![image](https://github.com/clone326/Salaries-of-Intl-Companies-DS102_DS104-/blob/main/SAP.png?raw=true)
+  
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
   
   ## Conclusion & Caveats
+  
+  #### Conclusions:
+  1. Best company to work at from 2017 to 2021 is Netflix
+  2. Best Job position is to be a Software Engineering Manager
+  3. Your base salary should grow with your experience
+  4. Your 5th year mark of job experience can mean a drastic shift in salary increase if you jump ship
+  5. With the currency standardised, Switzerland and USA appear to be the best locations to get the highest pay
+  6. If you an Amazon Employee, you are paid better in the Singapore HQ.
+  7. If you a Google Employee, you are paid better in the Switzerland HQ.
+  8. If you an IBM Employee, you are paid better in the Switzerland HQ.
+  9. If you a Microsoft Employee, you are paid better in either Switzerland or Singapore HQ.
+  10. If you a SAP Employee, you are paid better in the Australia HQ.
+  
+  
+  #### Caveats:
+  1. Standard of living between countries are different
+  2. Domain knowledge of your industry is useful as well in determining which job position to go for
+  3. Companies that give stock grants were not factored into the comparisons between companies
+  4. Focus on companies that provide more than a certain number of entries as opposed to doing a G-power analysis to seek our minimum sample size number
+  
+  
+  ## Thank you for reading my project's findings, I hope you have a great day ahead!❤️
   
   <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -46,7 +46,7 @@ Data on these inflation drivers was downloaded from <a href="https://www.kaggle.
   ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)\
   ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=plastic&logo=plotly&logoColor=white)\
   ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=plastic&logo=Matplotlib&logoColor=black)\
-  ![Custom badge](https://img.shields.io/static/v1?label=seasborn&message=0.12.1&color=informational&style=plastic)
+  ![Custom badge](https://img.shields.io/static/v1?label=seaborn&message=0.12.1&color=informational&style=plastic)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

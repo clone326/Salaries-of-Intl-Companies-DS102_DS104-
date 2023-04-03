@@ -37,7 +37,8 @@ This is a Data visualisation project using seaborn, plotly and matplolib to visu
 4. Insights between Location and Base salary over time
 5. Avg base salary across companies that have HQs in at least 10 countries
 
-Data on these inflation drivers was downloaded from <a href="https://www.kaggle.com/datasets/jackogozaly/data-science-and-stem-salaries" alt="Kaggle" width="80" height="80">
+Data on these inflation drivers was downloaded from <a href="https://www.kaggle.com/datasets/jackogozaly/data-science-and-stem-salaries" alt="Kaggle" width="80" height="80">here.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
